@@ -11,6 +11,7 @@ public class PlayerMovementScript : MonoBehaviour
     
     //Get Ref to RigidBody component
     private Rigidbody2D rb;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,9 @@ public class PlayerMovementScript : MonoBehaviour
         Movement();
     }
 
+    //Move the transform of the character by the direction and movementspeed
     void Movement(){
+        
         if(Input.GetKey("d")){
             rb.velocity = Vector2.right*movementSpeed;
             ChangePlayerDirection("Right");
@@ -34,6 +37,7 @@ public class PlayerMovementScript : MonoBehaviour
         }
     }
 
+    //Change the players looking direction by Movement()
     void ChangePlayerDirection(String Direction){
         if(Direction == "Left"){
             transform.localScale = new Vector3(-1,1,1);
@@ -41,4 +45,6 @@ public class PlayerMovementScript : MonoBehaviour
             transform.localScale = new Vector3(1,1,1);
         }
     }
+
 }
+
