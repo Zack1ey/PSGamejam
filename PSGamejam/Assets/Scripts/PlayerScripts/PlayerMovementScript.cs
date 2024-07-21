@@ -35,6 +35,7 @@ public class PlayerMovementScript : MonoBehaviour
             rb.velocity = Vector2.left*movementSpeed;
             ChangePlayerDirection("Left");
         }
+        
     }
 
     //Change the players looking direction by Movement()
