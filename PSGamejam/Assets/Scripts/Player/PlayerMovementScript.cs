@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,9 +26,19 @@ public class PlayerMovementScript : MonoBehaviour
     void Movement(){
         if(Input.GetKey("d")){
             rb.velocity = Vector2.right*movementSpeed;
+            ChangePlayerDirection("Right");
         }
         if(Input.GetKey("a")){
             rb.velocity = Vector2.left*movementSpeed;
+            ChangePlayerDirection("Left");
+        }
+    }
+
+    void ChangePlayerDirection(String Direction){
+        if(Direction == "Left"){
+            transform.localScale = new Vector3(-1,1,1);
+        }else if(Direction == "Right"){
+            transform.localScale = new Vector3(1,1,1);
         }
     }
 }
