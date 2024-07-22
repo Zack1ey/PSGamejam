@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CustomerScript : MonoBehaviour {
@@ -12,6 +13,7 @@ public class CustomerScript : MonoBehaviour {
     private int index;
     private bool playerInRange;
     public GameObject Panel;
+    public Button Button;
     
     void Update(){
         if(Input.GetKeyDown(KeyCode.E) && playerInRange){
@@ -22,16 +24,33 @@ public class CustomerScript : MonoBehaviour {
             }else{
                 Panel.SetActive(true);
                 StartCoroutine(Typing());
+                if(index >= dialogue.Length -1){
+                    Button.interactable = true;
+                    Debug.Log("Meow");
+                }else if(index <= dialogue.Length){
+                    Debug.Log(":notmoew");
+                }
             }
         }
     }
 
     IEnumerator Typing() {
-        foreach(char letter in dialogue[index].ToCharArray()){
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(0.15f);
+        //Type each letter of the string into the text box
+            foreach(char letter in dialogue[index].ToCharArray()){
+                dialogueText.text += letter;
+                //check the length and if they match then enable continue button
+                if(dialogueText.text.Length == dialogue[index].Length){
+                    Button.interactable=true;
+                    break;
+                }
+                //timer for 0.05 seconds
+                yield return new WaitForSeconds(0.05f);
         }
     } 
+
+    void PlayMiniGame(){
+        SceneManager.LoadScene("TestMiniGamePickUp");
+    }
 
     void zeroText(){
         dialogueText.text = "";
@@ -40,7 +59,11 @@ public class CustomerScript : MonoBehaviour {
     }
 
     public void NextLine(){
+        if(index == dialogue.Length -1){
+            PlayMiniGame();
+        }
         if(index < dialogue.Length -1){
+            Button.interactable=false;
             index++;
             dialogueText.text = "";
             StartCoroutine(Typing());
