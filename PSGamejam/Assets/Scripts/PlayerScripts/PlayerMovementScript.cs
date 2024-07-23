@@ -21,7 +21,7 @@ public class PlayerMovementScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        transform.position = Postioning.PlayerPos;
+        transform.position = Positioning.PlayerPos;
     }
 
     // Update is called once per frame

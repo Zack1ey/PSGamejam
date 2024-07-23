@@ -50,7 +50,7 @@ public class CustomerScript : MonoBehaviour {
     } 
 
     void PlayMiniGame(){
-        Postioning.PlayerPos = PlayerRef.transform.position;
+        Positioning.PlayerPos = PlayerRef.transform.position;
         
         SceneManager.LoadScene("TestMiniGamePickUp");
     }
