@@ -1717,6 +1717,7 @@ GameObject:
   - component: {fileID: 1992387947}
   - component: {fileID: 1992387948}
   - component: {fileID: 1992387949}
+  - component: {fileID: 1992387950}
   m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
@@ -1736,7 +1737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c635703f33251ae47bf13d277869ef46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 236134094}
 --- !u!212 &1992387945
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1911,6 +1911,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1992387950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992387943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45bc5f7713485214d81954a113e198aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 236134094}
+  randomTimerValue: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
