@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ZacPickUpTestScript : MonoBehaviour
 {
     private Vector2 mousePos;
     private Rigidbody2D rb;
     private bool dragable;
+    public Slider slider;
+    private float randomTimerValue;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        randomTimerValue = Random.Range(0.4f,0.6f);
     }
 
     // Update is called once per frame
@@ -23,6 +28,13 @@ public class ZacPickUpTestScript : MonoBehaviour
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             rb.MovePosition(new Vector2(mousePos.x,mousePos.y));
         }
+
+        StartTimer();
+
+        if(slider.value <= 0){
+            Debug.Log("Failed");
+            SceneManager.LoadScene("CoffeeNCauldronTestScene");
+        }
     }
 
     void OnTriggerEnter2D(){
@@ -31,5 +43,9 @@ public class ZacPickUpTestScript : MonoBehaviour
 
     void OnTriggerExit2D(){
         dragable = false;
+    }
+
+    void StartTimer(){
+        slider.value -= randomTimerValue * Time.deltaTime;
     }
 }
