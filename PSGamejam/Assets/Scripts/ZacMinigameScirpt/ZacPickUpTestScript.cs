@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ZacPickUpTestScript : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class ZacPickUpTestScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -23,6 +26,7 @@ public class ZacPickUpTestScript : MonoBehaviour
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             rb.MovePosition(new Vector2(mousePos.x,mousePos.y));
         }
+        
     }
 
     void OnTriggerEnter2D(){

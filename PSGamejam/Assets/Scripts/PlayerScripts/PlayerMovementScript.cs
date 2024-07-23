@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
@@ -10,18 +11,25 @@ public class PlayerMovementScript : MonoBehaviour
     public float movementSpeed;
     
     //Get Ref to RigidBody component
+    [Header("Components")]
     private Rigidbody2D rb;
-    
+
+    [Header("GameRefrence")]
+    public TextMeshProUGUI PointsUIText;
+    private int playerScore;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        transform.position = Positioning.PlayerPos;
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
+        GetPoints();
+        
     }
 
     //Move the transform of the character by the direction and movementspeed
@@ -47,5 +55,9 @@ public class PlayerMovementScript : MonoBehaviour
         }
     }
 
+    public void GetPoints(){
+        playerScore = Scoring.scorePoints;
+        PointsUIText.text = "GOLD:"+ playerScore;
+    }
 }
 
