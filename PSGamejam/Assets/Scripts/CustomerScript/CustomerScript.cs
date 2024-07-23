@@ -14,7 +14,8 @@ public class CustomerScript : MonoBehaviour {
     private bool playerInRange;
     public GameObject Panel;
     public Button Button;
-    
+    public GameObject PlayerRef;
+
     void Update(){
         if(Input.GetKeyDown(KeyCode.E) && playerInRange){
             //Interact Code
@@ -49,6 +50,8 @@ public class CustomerScript : MonoBehaviour {
     } 
 
     void PlayMiniGame(){
+        Postioning.PlayerPos = PlayerRef.transform.position;
+        
         SceneManager.LoadScene("TestMiniGamePickUp");
     }
 

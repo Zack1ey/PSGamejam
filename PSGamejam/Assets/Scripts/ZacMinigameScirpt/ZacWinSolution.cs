@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class ZacWinSolution : MonoBehaviour
 {
+    [Header("Amount of points (Inputed num is doubled)")]
+    public int PointReward;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,7 @@ public class ZacWinSolution : MonoBehaviour
 
     void OnTriggerEnter2D() {
         Debug.Log("W you won fool");
+        Scoring.scorePoints += PointReward;
         SceneManager.LoadScene("CoffeeNCauldronTestScene");
     }
 }
