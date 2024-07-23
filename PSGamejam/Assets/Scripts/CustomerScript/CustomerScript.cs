@@ -58,7 +58,9 @@ public class CustomerScript : MonoBehaviour {
     void zeroText(){
         dialogueText.text = "";
         index = 0;
+        if(Panel != null){
         Panel.SetActive(false);
+        }
     }
 
     public void NextLine(){
