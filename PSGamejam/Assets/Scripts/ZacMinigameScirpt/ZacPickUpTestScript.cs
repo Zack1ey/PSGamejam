@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,9 +15,9 @@ public class ZacPickUpTestScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
     }
 
+    
     // Update is called once per frame
     void Update()
     {
@@ -26,14 +27,14 @@ public class ZacPickUpTestScript : MonoBehaviour
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             rb.MovePosition(new Vector2(mousePos.x,mousePos.y));
         }
-        
+
     }
 
-    void OnTriggerEnter2D(){
-        dragable = true;
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.layer == 6){dragable = true;}
     }
 
-    void OnTriggerExit2D(){
-        dragable = false;
+    void OnTriggerExit2D(Collider2D other){
+        if(other.gameObject.layer == 6){dragable = false;}
     }
 }
