@@ -5,7 +5,7 @@ using UnityEngine;
 public class NpcSpawnScript : MonoBehaviour
 {
 
-    public GameObject _enemyPrefab;
+    [SerializeField]private GameObject _enemyPrefab;
 
     public float _minimumSpawnTime;
 
@@ -26,8 +26,10 @@ public class NpcSpawnScript : MonoBehaviour
 
         if (_timeUntilSpawn <= 0)
         {
-            Instantiate(_enemyPrefab, new Vector2);
+            if(_enemyPrefab != null){
+            Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
             SetTimeUnitlSpawn();
+            }
         }
     }
 
