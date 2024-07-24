@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 public class CustomerScript : MonoBehaviour {
 
-    public string MinigameName;
+    private int MiniNum;
+    private string MinigameName;
     public TextMeshProUGUI dialogueText;
     public string[] dialogue;
     private int index;
@@ -16,6 +17,22 @@ public class CustomerScript : MonoBehaviour {
     public GameObject Panel;
     public Button Button;
     public GameObject PlayerRef;
+
+    void Start() {
+        MiniNum = Random.Range(0, 2);
+
+        switch (MiniNum) {
+            case 0:
+                MinigameName = "CleanThePlate";
+                break;
+            case 1:
+                MinigameName = "PlopMinigame";
+                break;
+            case 2:
+                MinigameName = "TestMiniGamePickUp";
+                break;
+        }
+    }
 
     void Update(){
         if(Input.GetKeyDown(KeyCode.E) && playerInRange){

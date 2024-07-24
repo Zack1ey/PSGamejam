@@ -29,7 +29,7 @@ public class PlopWinCondition : MonoBehaviour
         ChangePotionColours();
         //If there are 2 objects or more then continue
         if(CheckResult()){
-            Scoring.scorePoints =+ 5;
+            Scoring.scorePoints = Scoring.scorePoints + 5;
             SceneManager.LoadScene("CoffeeNCauldronTestScene");
         }
         Debug.Log(overlappingObjects.Count);

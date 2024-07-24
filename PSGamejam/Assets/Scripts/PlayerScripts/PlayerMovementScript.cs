@@ -29,7 +29,6 @@ public class PlayerMovementScript : MonoBehaviour
     {
         Movement();
         GetPoints();
-        
     }
 
     //Move the transform of the character by the direction and movementspeed

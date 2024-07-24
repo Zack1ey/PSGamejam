@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGameScene/PlopMinigame.unity
     guid: c5b379c85ac531b42b7a5e3979eb3b1d
+  - enabled: 1
+    path: Assets/Scenes/MiniGameScene/CleanThePlate.unity
+    guid: 8ccd075f9c405024fa55b3aeab95bcf1
   m_configObjects: {}
