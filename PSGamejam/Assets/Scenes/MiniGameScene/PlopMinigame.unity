@@ -310,8 +310,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 330}
-  m_SizeDelta: {x: 383.0558, y: 39.8272}
+  m_AnchoredPosition: {x: 493, y: 442}
+  m_SizeDelta: {x: 626.535, y: 109.3928}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &210665756
 GameObject:
@@ -962,8 +962,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 187900185}
-  minTime: 0.01
-  maxTime: 0.02
+  minTime: 0.1
+  maxTime: 0.4
 --- !u!4 &472751524
 Transform:
   m_ObjectHideFlags: 0
@@ -2292,7 +2292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -647.247, y: 158.86646}
+  m_AnchoredPosition: {x: -554, y: 269}
   m_SizeDelta: {x: 519.7207, y: 441.0869}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1096761142
@@ -3348,7 +3348,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -4.9999847, y: 0}
+  m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
