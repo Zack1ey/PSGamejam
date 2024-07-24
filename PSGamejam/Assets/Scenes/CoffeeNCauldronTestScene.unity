@@ -1057,7 +1057,7 @@ GameObject:
   - component: {fileID: 1338173765}
   - component: {fileID: 1338173766}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Customer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1249,6 +1249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1df016b716d1e441b9a4b6a7777c03a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MinigameName: TestMiniGamePickUp
   dialogueText: {fileID: 1118812469}
   dialogue:
   - Hey I want a potion of you >:)

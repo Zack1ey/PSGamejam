@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class CustomerScript : MonoBehaviour {
 
+    public string MinigameName;
     public TextMeshProUGUI dialogueText;
     public string[] dialogue;
     private int index;
@@ -27,9 +28,7 @@ public class CustomerScript : MonoBehaviour {
                 StartCoroutine(Typing());
                 if(index >= dialogue.Length -1){
                     Button.interactable = true;
-                    Debug.Log("Meow");
-                }else if(index <= dialogue.Length){
-                    Debug.Log(":notmoew");
+                
                 }
             }
         }
@@ -51,8 +50,7 @@ public class CustomerScript : MonoBehaviour {
 
     void PlayMiniGame(){
         Positioning.PlayerPos = PlayerRef.transform.position;
-        
-        SceneManager.LoadScene("TestMiniGamePickUp");
+        SceneManager.LoadScene(MinigameName);
     }
 
     void zeroText(){
