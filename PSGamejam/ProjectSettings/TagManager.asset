@@ -8,6 +8,9 @@ TagManager:
   - YellowMush
   - RedMush
   - GreenMush
+  - PinkMush
+  - BlueMush
+  - PurpleMush
   layers:
   - Default
   - TransparentFX
