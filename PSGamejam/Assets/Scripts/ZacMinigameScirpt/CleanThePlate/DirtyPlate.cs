@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DirtyPlate : MonoBehaviour
 {
+    public GameObject timerStart;
     private Rigidbody2D rb;
     public int DirtCount;
     // Start is called before the first frame update
@@ -18,6 +19,7 @@ public class DirtyPlate : MonoBehaviour
     {
         if(transform.position.y >= 0){
             rb.velocity = new Vector2(0,0);
+            timerStart.SetActive(true);
         }else if(transform.position.y <=0){
             rb.velocity = Vector2.up*8;
         }
@@ -29,6 +31,7 @@ public class DirtyPlate : MonoBehaviour
 
     bool PlateCleaned(){
         if(DirtCount == 0){
+            timerStart.SetActive(false);
             return true;
         }
         return false;
