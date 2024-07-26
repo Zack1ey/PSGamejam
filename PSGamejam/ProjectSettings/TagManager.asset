@@ -11,6 +11,7 @@ TagManager:
   - PinkMush
   - BlueMush
   - PurpleMush
+  - Table
   layers:
   - Default
   - TransparentFX
