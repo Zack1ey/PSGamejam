@@ -23,11 +23,12 @@ public class ZacPickUpTestScript : MonoBehaviour
     {
         //if the user uses mouse button 1 and the cursor is in the collider
         if(Input.GetButton("Fire1")&& dragable){
+            rb.simulated = true;
             //move the object to the mouses point on the camera
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             rb.MovePosition(new Vector2(mousePos.x,mousePos.y));
         }
-
+        
     }
 
     void OnTriggerEnter2D(Collider2D other){

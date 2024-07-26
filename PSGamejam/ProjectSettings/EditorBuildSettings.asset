@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGameScene/CleanThePlate.unity
     guid: 8ccd075f9c405024fa55b3aeab95bcf1
+  - enabled: 1
+    path: Assets/Scenes/MiniGameScene/GrindTheBeans.unity
+    guid: 3a17730d33935774e9dfb47c0585b152
   m_configObjects: {}

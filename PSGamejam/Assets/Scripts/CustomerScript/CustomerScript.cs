@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,7 +17,8 @@ public class CustomerScript : MonoBehaviour {
     public GameObject PlayerRef;
 
     void Start() {
-        MiniNum = Random.Range(0, 2);
+        MiniNum = Random.Range(0, 4);
+        Debug.Log(MiniNum);
 
         switch (MiniNum) {
             case 0:
@@ -31,13 +30,15 @@ public class CustomerScript : MonoBehaviour {
             case 2:
                 MinigameName = "TestMiniGamePickUp";
                 break;
+            case 3:
+                MinigameName = "GrindTheBeans";
+                break;
         }
     }
 
     void Update(){
         if(Input.GetKeyDown(KeyCode.E) && playerInRange){
             //Interact Code
-            Debug.Log("Interacted");
             if(Panel.activeInHierarchy){
                 zeroText();
             }else{

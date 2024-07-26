@@ -1785,6 +1785,18 @@ PrefabInstance:
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 1118812469}
+    - target: {fileID: 7618843820455000415, guid: d96db97d80c46294684dfacc6d8fea03, type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618843820455000415, guid: d96db97d80c46294684dfacc6d8fea03, type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Can I have a coffee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618843820455000415, guid: d96db97d80c46294684dfacc6d8fea03, type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
