@@ -208,7 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1df016b716d1e441b9a4b6a7777c03a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinigameName: TestMiniGamePickUp
   dialogueText: {fileID: 0}
   dialogue:
   - Hey I want a potion of you >:)
