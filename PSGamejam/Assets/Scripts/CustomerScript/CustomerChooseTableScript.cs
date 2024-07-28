@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ChooseTableScript : MonoBehaviour
@@ -21,9 +22,9 @@ public class ChooseTableScript : MonoBehaviour
         Customer.transform.position = Vector2.MoveTowards(Customer.transform.position, Table.transform.position, speed);
     }
 
-    private void OnCollisionEnter2D (Collision2D collision)
+    private void OnTriggerEnter2D (Collider2D collision)
     {
-        if (collision.GameObject.name == "Table")
+        if (collision.gameObject.name == "Table")
         {
               Debug.Log("IT WORKS");
 
