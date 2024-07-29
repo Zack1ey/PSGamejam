@@ -12,6 +12,7 @@ TagManager:
   - BlueMush
   - PurpleMush
   - Table
+  - Police
   layers:
   - Default
   - TransparentFX

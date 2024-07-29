@@ -1,51 +1,72 @@
-using System.Collections;
+
 using System.Collections.Generic;
-using JetBrains.Annotations;
-using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PoliceMovement : MonoBehaviour
 {
     private List<Vector3> CopLocations = new List<Vector3>();
-    private GameObject Table;
-    private float Distance1;
-    private float Distance2;
+    private int PatrolLimit;
+    private int PatrolAmount;
     private int index;
+    bool PatrolAllowed;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        Debug.Log("Started");
-        
+        PatrolAllowed = true;
+        PatrolLimit = Random.Range(1, 5);
+        Debug.Log("Amount "+ PatrolAmount);
+        Debug.Log("Limit "+PatrolLimit);
+        if(PatrolAmount >= PatrolLimit){
+            PatrolLimit++;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(CopLocations.Count > 0){
-            FindDistance();
+        if(PatrolAllowed){
+            MoveTo();
         }else{
-            
+            LeaveCafe();
         }
-        
     }
 
     void OnTriggerEnter2D(Collider2D other){
         if(other.tag == "Table"){
-            if(CopLocations.Count < 1){
-                CopLocations.Add(other.transform.position);    
+            CopLocations.Add(other.transform.position);    
+            Debug.Log("CopLocations: "+CopLocations.Count);
+        }
+    }
+
+    void MoveTo(){
+        if(index < CopLocations.Count){
+            transform.position = Vector3.MoveTowards(transform.position, CopLocations[index], 2 * Time.deltaTime);
+            if(CheckPosition()){
+                index++;
+            }
+        }else{
+            if(PatrolAmount >= PatrolLimit){
+                Debug.Log("Leaving");
+                PatrolAllowed = false;
+            }else{
+                PatrolAmount++;
+                index = 0;
             }
         }
     }
-    void FindDistance(){
-        Distance1 = Vector2.Distance(transform.position, CopLocations[0]);
-        Distance2 = Vector2.Distance(transform.position, CopLocations[1]);
-        MoveToLocation();
+
+    bool CheckPosition(){
+        if(transform.position == CopLocations[index]){
+            return true;
+        }
+        return false;
     }
-    void MoveToLocation(){
-        if(Distance1<Distance2){
-            transform.position = Vector2.MoveTowards(transform.position, CopLocations[0], 5 * Time.deltaTime);
-        }else{
-            transform.position = Vector2.MoveTowards(transform.position, CopLocations[1], 5 * Time.deltaTime);
+
+    void LeaveCafe(){
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(-10,transform.position.y,0), 2 * Time.deltaTime);
+        if(transform.position == new Vector3(-10,transform.position.y,0)){
+            Destroy(gameObject);
         }
     }
 }
