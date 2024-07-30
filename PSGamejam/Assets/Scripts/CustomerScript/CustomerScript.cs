@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CustomerScript : MonoBehaviour {
-
-    private int MiniNum;
-    private string MinigameName;
     public TextMeshProUGUI dialogueText;
     public string[] dialogue;
     private int index;
@@ -15,7 +12,6 @@ public class CustomerScript : MonoBehaviour {
     public GameObject Panel;
     public Button Button;
     public GameObject PlayerRef;
-
     private GameObject spawner;
 
 

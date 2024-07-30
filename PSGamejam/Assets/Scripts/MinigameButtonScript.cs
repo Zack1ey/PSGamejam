@@ -8,6 +8,7 @@ public class MinigameButtonScript : MonoBehaviour
     private int MiniNum;
     private string MinigameName;
     public GameObject PlayerRef;
+    public List<GameObject> Tables = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,11 @@ public class MinigameButtonScript : MonoBehaviour
                 MinigameName = "GrindTheBeans";
                 break;
         }
+
+        foreach(GameObject t in Tables){
+            t.GetComponent<TableScript>().SetIsOpen(true);
+        }
+
         Positioning.PlayerPos = PlayerRef.transform.position;
         SceneManager.LoadScene(MinigameName);
     }
