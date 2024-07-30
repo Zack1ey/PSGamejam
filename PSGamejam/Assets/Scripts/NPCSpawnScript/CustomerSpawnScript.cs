@@ -28,18 +28,19 @@ public class CustomerSpawnScript : MonoBehaviour
     {
         if(tables.Count > 0){
             for(int i = 0; i < tables.Count;i++){
-                if(tables[i].GetComponent<TableScript>().IsOpen == true){
+                if(tables[i].GetComponent<TableScript>().GetIsOpen()){
                     Instantiate(customer, transform.position, quaternion.identity);
-                    tables[i].GetComponent<TableScript>().IsOpen = false;
+                    tables.Remove(tables[i]);
+                    break;
                 }
             }
         }
     }
 
     void OnTriggerEnter2D(Collider2D other){
-        //Debug.Log("Hit: "+ other);
         if (other.gameObject.tag == "Table"){
             tables.Add(other.gameObject);
+            Debug.Log("Table count: "+tables.Count);
         }
     }
 }

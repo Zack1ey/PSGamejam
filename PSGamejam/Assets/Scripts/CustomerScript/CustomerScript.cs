@@ -20,24 +20,7 @@ public class CustomerScript : MonoBehaviour {
 
 
     void Start() {
-        MiniNum = Random.Range(0, 4);
-        Debug.Log(MiniNum);
-
-        switch (MiniNum) {
-            case 0:
-                MinigameName = "CleanThePlate";
-                break;
-            case 1:
-                MinigameName = "PlopMinigame";
-                break;
-            case 2:
-                MinigameName = "TestMiniGamePickUp";
-                break;
-            case 3:
-                MinigameName = "GrindTheBeans";
-                break;
-        }
-
+        
     }
 
     void Update(){
@@ -76,23 +59,18 @@ public class CustomerScript : MonoBehaviour {
         }
     } 
 
-    void PlayMiniGame(){
-        Positioning.PlayerPos = PlayerRef.transform.position;
-        SceneManager.LoadScene(MinigameName);
-    }
+    
 
     void zeroText(){
         dialogueText.text = "";
         index = 0;
+        Button.interactable = false;
         if(Panel != null){
         Panel.SetActive(false);
         }
     }
 
     public void NextLine(){
-        if(index == dialogue.Length -1){
-            PlayMiniGame();
-        }
         if(index < dialogue.Length -1){
             Button.interactable=false;
             index++;

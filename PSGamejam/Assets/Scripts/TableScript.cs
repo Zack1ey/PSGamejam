@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TableScript : MonoBehaviour
 {
-    public bool IsOpen;
+    private bool IsOpen;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,8 +12,11 @@ public class TableScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    public bool GetIsOpen(){
+        return IsOpen;
+    }
+
+    public void SetIsOpen(bool isOpen){
+        this.IsOpen = isOpen;
     }
 }
