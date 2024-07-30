@@ -39,6 +39,6 @@ public class MinigameButtonScript : MonoBehaviour
         }
 
         Positioning.PlayerPos = PlayerRef.transform.position;
-        SceneManager.LoadScene(MinigameName);
+        SceneManager.LoadScene(MinigameName, LoadSceneMode.Additive);
     }
 }

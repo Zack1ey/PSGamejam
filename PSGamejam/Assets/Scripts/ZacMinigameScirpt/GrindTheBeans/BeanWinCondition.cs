@@ -30,7 +30,7 @@ public class BeanWinCondition : MonoBehaviour
         }
         if (TimesHit > TimesNeeded){
             Scoring.scorePoints += 5;
-            SceneManager.LoadScene("CoffeeNCauldronTestScene");
+            SceneManager.UnloadSceneAsync(2);
         }
     }
 
