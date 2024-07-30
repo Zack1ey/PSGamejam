@@ -744,21 +744,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: CopSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 1110069454068756617, guid: 55ed5e45cbc841340a74afcd0f72e8f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4718730763976048639, guid: 55ed5e45cbc841340a74afcd0f72e8f9, type: 3}
       propertyPath: _maximumSpawnTime
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4718730763976048639, guid: 55ed5e45cbc841340a74afcd0f72e8f9, type: 3}
       propertyPath: _minimumSpawnTime
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5349162590435585397, guid: 55ed5e45cbc841340a74afcd0f72e8f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.55
+      value: -11.05
       objectReference: {fileID: 0}
     - target: {fileID: 5349162590435585397, guid: 55ed5e45cbc841340a74afcd0f72e8f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7
+      value: -2.51
       objectReference: {fileID: 0}
     - target: {fileID: 5349162590435585397, guid: 55ed5e45cbc841340a74afcd0f72e8f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1016,6 +1020,93 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1771820581}
   m_SourcePrefab: {fileID: 100100000, guid: 647ade9b213044840bd0e21ed4c88241, type: 3}
+--- !u!1 &906109476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 906109478}
+  - component: {fileID: 906109477}
+  - component: {fileID: 906109479}
+  m_Layer: 0
+  m_Name: CustomerSpawner
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &906109477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906109476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 122e2d0502b124d9a90735b3af072faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyPrefab: {fileID: 2348025927740258173, guid: d96db97d80c46294684dfacc6d8fea03, type: 3}
+  _minimumSpawnTime: 10
+  _maximumSpawnTime: 15
+  Panel: {fileID: 776141153}
+  Button: {fileID: 161137684}
+  PlayerRef: {fileID: 1458980917}
+  dialogueText: {fileID: 1118812469}
+--- !u!4 &906109478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906109476}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.74, y: -2.53, z: 0.6690178}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &906109479
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906109476}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &919920908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,7 +1718,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -2060,8 +2151,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1424727229}
-  - {fileID: 776141154}
   - {fileID: 1683026056}
+  - {fileID: 776141154}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2427,7 +2518,7 @@ PrefabInstance:
       objectReference: {fileID: 1118812469}
     - target: {fileID: 7618843820455000415, guid: d96db97d80c46294684dfacc6d8fea03, type: 3}
       propertyPath: dialogue.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7618843820455000415, guid: d96db97d80c46294684dfacc6d8fea03, type: 3}
       propertyPath: dialogue.Array.data[0]
@@ -2435,7 +2526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7618843820455000415, guid: d96db97d80c46294684dfacc6d8fea03, type: 3}
       propertyPath: dialogue.Array.data[1]
-      value: 
+      value: Can I have a coffee
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2457,6 +2548,10 @@ PrefabInstance:
     - target: {fileID: 4449746597005743156, guid: 6f498371c5a894e4aa4c40dd25fbcefe, type: 3}
       propertyPath: m_Name
       value: CapPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449746597005743156, guid: 6f498371c5a894e4aa4c40dd25fbcefe, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5618590022820298414, guid: 6f498371c5a894e4aa4c40dd25fbcefe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2531,3 +2626,4 @@ SceneRoots:
   - {fileID: 2017586987}
   - {fileID: 784014452}
   - {fileID: 624101155}
+  - {fileID: 906109478}

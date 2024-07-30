@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerAlerted : MonoBehaviour
 {
-    private float AlertIncr = .05f;
+    private float AlertIncr = .01f;
+    private float AlertDecr = .005f;
     public Slider slider;
-    private bool PoliceInRange;
+    private List<Collider2D> policeList = new List<Collider2D>();
     // Start is called before the first frame update
     void Start()
     {
@@ -17,21 +19,26 @@ public class PlayerAlerted : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PoliceInRange){
+        if(policeList.Count > 0){
             slider.value += AlertIncr * Time.deltaTime;
+        }else{
+            slider.value -= AlertDecr * Time.deltaTime;
         }
-        //Debug.Log(PoliceInRange);
+
+        if(slider.value >= 1){
+            Time.timeScale = .25f;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.tag == "Police"){
-            PoliceInRange = true;
+            policeList.Add(other);
         }
     }
 
     void OnTriggerExit2D(Collider2D other){
         if(other.gameObject.tag == "Police"){
-            PoliceInRange = false;
+            policeList.Remove(other);
         }
     }
 }

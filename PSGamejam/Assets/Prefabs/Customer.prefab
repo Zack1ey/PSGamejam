@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7197339070313547697}
   - component: {fileID: 6729178825072363667}
   - component: {fileID: 7618843820455000415}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Customer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -210,8 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 0}
   dialogue:
-  - Hey I want a potion of you >:)
-  - Or do i...
+  - I want a coffee!
   Panel: {fileID: 0}
   Button: {fileID: 0}
   PlayerRef: {fileID: 0}
@@ -225,7 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7270902482981922354}
   - component: {fileID: 430860458053356170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

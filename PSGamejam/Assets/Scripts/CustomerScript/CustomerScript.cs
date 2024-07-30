@@ -16,6 +16,9 @@ public class CustomerScript : MonoBehaviour {
     public Button Button;
     public GameObject PlayerRef;
 
+    private GameObject spawner;
+
+
     void Start() {
         MiniNum = Random.Range(0, 4);
         Debug.Log(MiniNum);
@@ -34,6 +37,7 @@ public class CustomerScript : MonoBehaviour {
                 MinigameName = "GrindTheBeans";
                 break;
         }
+
     }
 
     void Update(){
@@ -49,6 +53,12 @@ public class CustomerScript : MonoBehaviour {
                 
                 }
             }
+        }
+        if(spawner != null){
+            Panel = spawner.GetComponent<NpcSpawnScript>().Panel;
+            dialogueText = spawner.GetComponent<NpcSpawnScript>().dialogueText;
+            Button = spawner.GetComponent<NpcSpawnScript>().Button;
+            PlayerRef = spawner.GetComponent<NpcSpawnScript>().PlayerRef;
         }
     }
 
@@ -93,13 +103,20 @@ public class CustomerScript : MonoBehaviour {
         }
     }
     //When player is in collider Zone then change the playerinrange to true or false
-    void OnTriggerEnter2D() {
-        playerInRange = true;
+    void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.tag == "Player"){
+            playerInRange = true;
+        }
+        if(other.gameObject.tag =="EditorOnly"){
+            spawner = other.gameObject;
+        }
     }
 
-    void OnTriggerExit2D(){
-        playerInRange = false;
-        zeroText();
+    void OnTriggerExit2D(Collider2D other){
+        if(other.gameObject.tag == "Player"){
+            playerInRange = false;
+            zeroText();
+        }
     }
 
 }

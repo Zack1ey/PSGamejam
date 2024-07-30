@@ -6,17 +6,16 @@ using Random = UnityEngine.Random;
 public class PoliceMovement : MonoBehaviour
 {
     private List<Vector3> CopLocations = new List<Vector3>();
-    private int PatrolLimit;
+    private int PatrolLimit = 1;
     private int PatrolAmount;
     private int index;
-    bool PatrolAllowed;
+    bool PatrolAllowed = true;
     // Start is called before the first frame update
     void Awake()
     {
-        PatrolAllowed = true;
         PatrolLimit = Random.Range(1, 5);
-        Debug.Log("Amount "+ PatrolAmount);
-        Debug.Log("Limit "+PatrolLimit);
+        //Debug.Log("Amount " + PatrolAmount);
+        //Debug.Log("Limit " + PatrolLimit);
         if(PatrolAmount >= PatrolLimit){
             PatrolLimit++;
         }
@@ -35,7 +34,7 @@ public class PoliceMovement : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         if(other.tag == "Table"){
             CopLocations.Add(other.transform.position);    
-            Debug.Log("CopLocations: "+CopLocations.Count);
+            //Debug.Log("CopLocations: " + CopLocations.Count);
         }
     }
 

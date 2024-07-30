@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NpcSpawnScript : MonoBehaviour
 {
 
     [SerializeField]private GameObject _enemyPrefab;
-
     public float _minimumSpawnTime;
-
     public float _maximumSpawnTime;
-
     private float _timeUntilSpawn;
+    public GameObject Panel;
+    public Button Button;
+    public GameObject PlayerRef;
+    public TextMeshProUGUI dialogueText;
 
     // Start is called before the first frame update
+    void Awake(){
+
+    }
+
     void Start()
     {
         SetTimeUnitlSpawn();
@@ -27,8 +34,8 @@ public class NpcSpawnScript : MonoBehaviour
         if (_timeUntilSpawn <= 0)
         {
             if(_enemyPrefab != null){
-            Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
-            SetTimeUnitlSpawn();
+                Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
+                SetTimeUnitlSpawn();
             }
         }
     }
