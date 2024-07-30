@@ -5,19 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MinigameButtonScript : MonoBehaviour
 {
-    private int MiniNum;
+    private int MiniNum = 3;
     private string MinigameName;
     public GameObject PlayerRef;
     public List<GameObject> Tables = new List<GameObject>();
-    // Start is called before the first frame update
-    void Start()
-    {
-    
-    }
+    public GameObject SCENE;
 
     // Update is called once per frame
     public void PlayMinigame(){
-        MiniNum = Random.Range(0, 4);
+        MainScene.Scene = SCENE;
+        MainScene.Scene.SetActive(false);
+        //MiniNum = Random.Range(0, 4);
 
         switch (MiniNum) {
             case 0:

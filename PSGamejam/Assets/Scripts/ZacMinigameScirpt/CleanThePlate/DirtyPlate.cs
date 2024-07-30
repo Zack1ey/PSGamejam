@@ -41,7 +41,7 @@ public class DirtyPlate : MonoBehaviour
         rb.velocity = Vector2.up*7;
         if(transform.position.y >= 8){
             Scoring.scorePoints += 5;
-            SceneManager.LoadScene("CoffeeNCauldronTestScene");
+            SceneManager.UnloadSceneAsync("CleanThePlate");
         }
     }
 }

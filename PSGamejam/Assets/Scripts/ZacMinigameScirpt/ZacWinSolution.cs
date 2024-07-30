@@ -23,6 +23,6 @@ public class ZacWinSolution : MonoBehaviour
     void OnTriggerEnter2D() {
         Debug.Log("W you won fool");
         Scoring.scorePoints += PointReward;
-        SceneManager.LoadScene("CoffeeNCauldronTestScene");
+        SceneManager.UnloadSceneAsync("TestMiniGamePickUp");
     }
 }

@@ -29,7 +29,7 @@ public class CustomerSpawnScript : MonoBehaviour
         if(tables.Count > 0){
             for(int i = 0; i < tables.Count;i++){
                 if(tables[i].GetComponent<TableScript>().GetIsOpen()){
-                    Instantiate(customer, transform.position, quaternion.identity);
+                    Instantiate(customer, transform.position, quaternion.identity,gameObject.transform);
                     tables.Remove(tables[i]);
                     break;
                 }

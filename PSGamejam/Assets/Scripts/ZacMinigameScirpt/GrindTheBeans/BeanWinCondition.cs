@@ -30,7 +30,8 @@ public class BeanWinCondition : MonoBehaviour
         }
         if (TimesHit > TimesNeeded){
             Scoring.scorePoints += 5;
-            SceneManager.UnloadSceneAsync(2);
+            MainScene.Scene.SetActive(true);
+            SceneManager.UnloadSceneAsync("GrindTheBeans");
         }
     }
 

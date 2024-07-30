@@ -74,6 +74,7 @@ public class CustomerScript : MonoBehaviour {
             StartCoroutine(Typing());
         }else{
             zeroText();
+            Destroy(gameObject);
         }
     }
     //When player is in collider Zone then change the playerinrange to true or false

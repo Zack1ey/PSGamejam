@@ -30,7 +30,7 @@ public class PlopWinCondition : MonoBehaviour
         //If there are 2 objects or more then continue
         if(CheckResult()){
             Scoring.scorePoints = Scoring.scorePoints + 5;
-            SceneManager.LoadScene("CoffeeNCauldronTestScene");
+            SceneManager.UnloadSceneAsync("PlopMinigame");
         }
         Debug.Log(overlappingObjects.Count);
     }
