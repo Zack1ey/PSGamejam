@@ -17,7 +17,6 @@ public class MinigameButtonScript : MonoBehaviour
 
     // Update is called once per frame
     public void PlayMinigame(){
-        Debug.Log("ButtonPressed");
         MiniNum = Random.Range(0, 4);
 
         switch (MiniNum) {
