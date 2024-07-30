@@ -7,12 +7,13 @@ public class MinigameButtonScript : MonoBehaviour
 {
     private int MiniNum = 3;
     private string MinigameName;
-    public GameObject PlayerRef;
     public List<GameObject> Tables = new List<GameObject>();
     public GameObject SCENE;
 
+
     // Update is called once per frame
     public void PlayMinigame(){
+        gameObject.SetActive(false);
         MainScene.Scene = SCENE;
         MainScene.Scene.SetActive(false);
         //MiniNum = Random.Range(0, 4);
@@ -31,12 +32,6 @@ public class MinigameButtonScript : MonoBehaviour
                 MinigameName = "GrindTheBeans";
                 break;
         }
-
-        foreach(GameObject t in Tables){
-            t.GetComponent<TableScript>().SetIsOpen(true);
-        }
-
-        Positioning.PlayerPos = PlayerRef.transform.position;
         SceneManager.LoadScene(MinigameName, LoadSceneMode.Additive);
     }
 }

@@ -31,7 +31,7 @@ public class NpcSpawnScript : MonoBehaviour
         if (_timeUntilSpawn <= 0)
         {
             if(_enemyPrefab != null){
-                Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
+                Instantiate(_enemyPrefab, transform.position, Quaternion.identity, gameObject.transform);
                 SetTimeUnitlSpawn();
             }
         }

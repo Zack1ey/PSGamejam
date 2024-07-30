@@ -1,8 +1,10 @@
 
+using System.Text;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Scene = UnityEngine.SceneManagement.Scene;
 
 public class StartSliderTimer : MonoBehaviour
 {
@@ -11,7 +13,6 @@ public class StartSliderTimer : MonoBehaviour
     [Header("Time between min and max (Min = Slower)")]
     public float minTime;
     public float maxTime;
-    
     private float randomTimerValue;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,20 @@ public class StartSliderTimer : MonoBehaviour
         StartTimer();
         if(slider.value <= 0){
             Debug.Log("Failed");
-            
+            if (SceneManager.sceneCount > 0)
+        {
+            for (int n = 0; n < SceneManager.sceneCount; ++n)
+            {
+                Scene scene = SceneManager.GetSceneAt(n);
+                if(scene.name == "CoffeeNCauldronTestScene"){
+
+                }else{
+                    SceneManager.UnloadSceneAsync(scene.name);
+                    MainScene.Scene.SetActive(true);
+                }
+                
+            }
+        }
         }
     }
 

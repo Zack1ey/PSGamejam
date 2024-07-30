@@ -15,6 +15,7 @@ public class CustomerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(table != null){
             transform.position = Vector2.MoveTowards(transform.position, table.transform.position, 2 * Time.deltaTime);
             table.GetComponent<TableScript>().SetIsOpen(false);
@@ -23,16 +24,18 @@ public class CustomerMovement : MonoBehaviour
                 Destroy(gameObject.GetComponent<CustomerMovement>());
             }
         }
-        if(Tables.Count > 0){
+        */
+
+        if (Tables.Count>0){
             foreach(GameObject t in Tables){
-                Debug.Log(t.GetComponent<TableScript>().GetIsOpen());
                 if(t.GetComponent<TableScript>().GetIsOpen()){
                     table = t;
                     break;
                 }
             }
         }
-        
+
+
     }
 
     void OnTriggerEnter2D(Collider2D other){

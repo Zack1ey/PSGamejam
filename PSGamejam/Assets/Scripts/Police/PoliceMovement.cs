@@ -26,8 +26,6 @@ public class PoliceMovement : MonoBehaviour
     {
         if(PatrolAllowed){
             MoveTo();
-        }else{
-            LeaveCafe();
         }
     }
 
@@ -45,6 +43,7 @@ public class PoliceMovement : MonoBehaviour
                 index++;
             }
         }else{
+            /*
             if(PatrolAmount >= PatrolLimit){
                 Debug.Log("Leaving");
                 PatrolAllowed = false;
@@ -52,6 +51,7 @@ public class PoliceMovement : MonoBehaviour
                 PatrolAmount++;
                 index = 0;
             }
+            */
         }
     }
 

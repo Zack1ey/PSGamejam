@@ -11,7 +11,6 @@ public class CustomerScript : MonoBehaviour {
     private bool playerInRange;
     public GameObject Panel;
     public Button Button;
-    public GameObject PlayerRef;
     private GameObject spawner;
 
 
@@ -21,6 +20,7 @@ public class CustomerScript : MonoBehaviour {
 
     void Update(){
         if(Input.GetKeyDown(KeyCode.E) && playerInRange){
+            
             //Interact Code
             if(Panel.activeInHierarchy){
                 zeroText();
@@ -34,10 +34,9 @@ public class CustomerScript : MonoBehaviour {
             }
         }
         if(spawner != null){
-            Panel = spawner.GetComponent<CustomerSpawnScript>().Panel;
-            dialogueText = spawner.GetComponent<CustomerSpawnScript>().dialogueText;
-            Button = spawner.GetComponent<CustomerSpawnScript>().Button;
-            PlayerRef = spawner.GetComponent<CustomerSpawnScript>().PlayerRef;
+            Panel = spawner.GetComponent<TableScript>().Panel;
+            dialogueText = spawner.GetComponent<TableScript>().dialogueText;
+            Button = spawner.GetComponent<TableScript>().Button;
         }
     }
 
@@ -74,7 +73,6 @@ public class CustomerScript : MonoBehaviour {
             StartCoroutine(Typing());
         }else{
             zeroText();
-            Destroy(gameObject);
         }
     }
     //When player is in collider Zone then change the playerinrange to true or false
@@ -82,7 +80,7 @@ public class CustomerScript : MonoBehaviour {
         if(other.gameObject.tag == "Player"){
             playerInRange = true;
         }
-        if(other.gameObject.tag =="EditorOnly"){
+        if(other.gameObject.tag =="Table"){
             spawner = other.gameObject;
         }
     }

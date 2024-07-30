@@ -143,4 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58db19d4a50408d458a7cc20360322d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsOpen: 0
+  customer: {fileID: 2348025927740258173, guid: d96db97d80c46294684dfacc6d8fea03, type: 3}
