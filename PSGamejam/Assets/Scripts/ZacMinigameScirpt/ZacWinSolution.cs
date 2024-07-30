@@ -24,5 +24,6 @@ public class ZacWinSolution : MonoBehaviour
         Debug.Log("W you won fool");
         Scoring.scorePoints += PointReward;
         SceneManager.UnloadSceneAsync("TestMiniGamePickUp");
+        MainScene.Scene.SetActive(true);
     }
 }

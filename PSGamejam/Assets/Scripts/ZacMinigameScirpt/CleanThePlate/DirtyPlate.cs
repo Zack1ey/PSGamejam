@@ -42,6 +42,7 @@ public class DirtyPlate : MonoBehaviour
         if(transform.position.y >= 8){
             Scoring.scorePoints += 5;
             SceneManager.UnloadSceneAsync("CleanThePlate");
+            MainScene.Scene.SetActive(true);
         }
     }
 }

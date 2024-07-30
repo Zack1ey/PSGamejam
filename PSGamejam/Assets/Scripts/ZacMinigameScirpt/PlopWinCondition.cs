@@ -31,6 +31,7 @@ public class PlopWinCondition : MonoBehaviour
         if(CheckResult()){
             Scoring.scorePoints = Scoring.scorePoints + 5;
             SceneManager.UnloadSceneAsync("PlopMinigame");
+            MainScene.Scene.SetActive(true);
         }
         Debug.Log(overlappingObjects.Count);
     }

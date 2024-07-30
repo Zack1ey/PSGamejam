@@ -16,7 +16,7 @@ public class MinigameButtonScript : MonoBehaviour
         gameObject.SetActive(false);
         MainScene.Scene = SCENE;
         MainScene.Scene.SetActive(false);
-        //MiniNum = Random.Range(0, 4);
+        MiniNum = Random.Range(0, 4);
 
         switch (MiniNum) {
             case 0:
