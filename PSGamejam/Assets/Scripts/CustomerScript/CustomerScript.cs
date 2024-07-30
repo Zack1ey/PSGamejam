@@ -55,10 +55,10 @@ public class CustomerScript : MonoBehaviour {
             }
         }
         if(spawner != null){
-            Panel = spawner.GetComponent<NpcSpawnScript>().Panel;
-            dialogueText = spawner.GetComponent<NpcSpawnScript>().dialogueText;
-            Button = spawner.GetComponent<NpcSpawnScript>().Button;
-            PlayerRef = spawner.GetComponent<NpcSpawnScript>().PlayerRef;
+            Panel = spawner.GetComponent<CustomerSpawnScript>().Panel;
+            dialogueText = spawner.GetComponent<CustomerSpawnScript>().dialogueText;
+            Button = spawner.GetComponent<CustomerSpawnScript>().Button;
+            PlayerRef = spawner.GetComponent<CustomerSpawnScript>().PlayerRef;
         }
     }
 

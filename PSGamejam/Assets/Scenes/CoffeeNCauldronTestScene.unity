@@ -630,24 +630,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161137682}
   m_CullTransparentMesh: 1
---- !u!1 &523579359 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8627525894680818913, guid: 647ade9b213044840bd0e21ed4c88241, type: 3}
-  m_PrefabInstance: {fileID: 2017586987}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &523579360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523579359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58db19d4a50408d458a7cc20360322d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsOpen: 0
 --- !u!1 &578567049
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1110069454068756617, guid: 55ed5e45cbc841340a74afcd0f72e8f9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4718730763976048639, guid: 55ed5e45cbc841340a74afcd0f72e8f9, type: 3}
       propertyPath: _maximumSpawnTime
@@ -1029,8 +1011,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 906109478}
-  - component: {fileID: 906109477}
   - component: {fileID: 906109479}
+  - component: {fileID: 906109480}
+  - component: {fileID: 906109481}
+  - component: {fileID: 906109482}
   m_Layer: 0
   m_Name: CustomerSpawner
   m_TagString: EditorOnly
@@ -1038,25 +1022,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &906109477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906109476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 122e2d0502b124d9a90735b3af072faf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 2348025927740258173, guid: d96db97d80c46294684dfacc6d8fea03, type: 3}
-  _minimumSpawnTime: 10
-  _maximumSpawnTime: 15
-  Panel: {fileID: 776141153}
-  Button: {fileID: 161137684}
-  PlayerRef: {fileID: 1458980917}
-  dialogueText: {fileID: 1118812469}
 --- !u!4 &906109478
 Transform:
   m_ObjectHideFlags: 0
@@ -1107,6 +1072,95 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &906109480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906109476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34866e427966d44f8e3b6904c48438a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyPrefab: {fileID: 2348025927740258173, guid: d96db97d80c46294684dfacc6d8fea03, type: 3}
+  Panel: {fileID: 776141153}
+  Button: {fileID: 161137684}
+  PlayerRef: {fileID: 1458980917}
+  dialogueText: {fileID: 1118812469}
+--- !u!61 &906109481
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906109476}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 11.514984, y: 0.098986864}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 24.029968, y: 2.0888562}
+  m_EdgeRadius: 0
+--- !u!50 &906109482
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906109476}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &919920908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2427,26 +2481,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6191111309925782770, guid: 647ade9b213044840bd0e21ed4c88241, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8627525894680818913, guid: 647ade9b213044840bd0e21ed4c88241, type: 3}
       propertyPath: m_Name
       value: Table
       objectReference: {fileID: 0}
-    - target: {fileID: 8627525894680818913, guid: 647ade9b213044840bd0e21ed4c88241, type: 3}
-      propertyPath: m_TagString
-      value: Table
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1344575862083800881, guid: 647ade9b213044840bd0e21ed4c88241, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8627525894680818913, guid: 647ade9b213044840bd0e21ed4c88241, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 523579360}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 647ade9b213044840bd0e21ed4c88241, type: 3}
 --- !u!1001 &6810478595032908400
 PrefabInstance:

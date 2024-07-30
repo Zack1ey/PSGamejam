@@ -11,10 +11,7 @@ public class NpcSpawnScript : MonoBehaviour
     public float _minimumSpawnTime;
     public float _maximumSpawnTime;
     private float _timeUntilSpawn;
-    public GameObject Panel;
-    public Button Button;
-    public GameObject PlayerRef;
-    public TextMeshProUGUI dialogueText;
+
 
     // Start is called before the first frame update
     void Awake(){
@@ -44,4 +41,5 @@ public class NpcSpawnScript : MonoBehaviour
     {
         _timeUntilSpawn = Random.Range(_minimumSpawnTime, _maximumSpawnTime);
     }
+
 }
