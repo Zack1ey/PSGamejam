@@ -7,8 +7,8 @@ using UnityEngine.Windows;
 
 public class PlayerAlerted : MonoBehaviour
 {
-    private float AlertIncr = .01f;
-    private float AlertDecr = .005f;
+    private float AlertIncr = .015f;
+    private float AlertDecr = .004f;
     public Slider slider;
     private List<Collider2D> policeList = new List<Collider2D>();
 
