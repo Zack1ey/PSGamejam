@@ -14,11 +14,17 @@ public class CustomerScript : MonoBehaviour {
     private GameObject spawner;
     private Sprite[] customerSprites;
     private int random;
+    private AudioClip OrcClip;
+
+    private AudioSource audioSource;
 
     void Start() {
         customerSprites = Resources.LoadAll<Sprite>("NPC");
-        random = Random.Range(0, 5);
+        random = Random.Range(0, 4);
         gameObject.GetComponent<SpriteRenderer>().sprite = customerSprites[random];
+        OrcClip = Resources.Load<AudioClip>("orcnoise");
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = OrcClip;
     }
 
     void Update(){
@@ -28,6 +34,7 @@ public class CustomerScript : MonoBehaviour {
             if(Panel.activeInHierarchy){
                 zeroText();
             }else{
+                audioSource.Play();
                 Panel.SetActive(true);
                 StartCoroutine(Typing());
                 if(index >= dialogue.Length -1){

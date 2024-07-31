@@ -47,9 +47,9 @@ public class PlayerMovementScript : MonoBehaviour
     //Change the players looking direction by Movement()
     void ChangePlayerDirection(String Direction){
         if(Direction == "Left"){
-            transform.localScale = new Vector3(2,2,2);
+            transform.localScale = new Vector3(2,1.7f,2);
         }else if(Direction == "Right"){
-            transform.localScale = new Vector3(-2,2,2);
+            transform.localScale = new Vector3(-2,1.7f,2);
         }
     }
 
