@@ -21,7 +21,6 @@ public class PlayerMovementScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        transform.position = Positioning.PlayerPos;
     }
 
     // Update is called once per frame
@@ -48,9 +47,9 @@ public class PlayerMovementScript : MonoBehaviour
     //Change the players looking direction by Movement()
     void ChangePlayerDirection(String Direction){
         if(Direction == "Left"){
-            transform.localScale = new Vector3(-1,1,1);
+            transform.localScale = new Vector3(2,2,2);
         }else if(Direction == "Right"){
-            transform.localScale = new Vector3(1,1,1);
+            transform.localScale = new Vector3(-2,2,2);
         }
     }
 

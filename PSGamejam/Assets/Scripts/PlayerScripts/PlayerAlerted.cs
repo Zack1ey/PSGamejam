@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Windows;
 
 public class PlayerAlerted : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerAlerted : MonoBehaviour
     private float AlertDecr = .005f;
     public Slider slider;
     private List<Collider2D> policeList = new List<Collider2D>();
+
+    public GameObject GameOverPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +29,9 @@ public class PlayerAlerted : MonoBehaviour
         }
 
         if(slider.value >= 1){
-            Time.timeScale = .25f;
+            
+            GameOverPanel.SetActive(true);
+            Time.timeScale = .0f;
         }
     }
 

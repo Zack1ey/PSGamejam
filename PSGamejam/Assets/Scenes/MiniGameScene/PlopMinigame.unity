@@ -962,8 +962,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 187900185}
-  minTime: 0.2
-  maxTime: 0.35
+  minTime: 0.17
+  maxTime: 0.23
 --- !u!4 &472751524
 Transform:
   m_ObjectHideFlags: 0

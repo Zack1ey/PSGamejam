@@ -11,6 +11,7 @@ public class BeanWinCondition : MonoBehaviour
     private int TimesNeeded;
     public AudioSource audioSource;
     public GameObject Stomp;
+    public GameObject Coffee;
     private float timerValue = 3;
     public Image SwirlImage;
     // Start is called before the first frame update
@@ -39,13 +40,15 @@ public class BeanWinCondition : MonoBehaviour
         if(other.tag == "Player"){
             TimesHit++;
             audioSource.Play();
-            Stomp.transform.position = new Vector3(4,-2.14f,0.12f);
+            Stomp.transform.position = new Vector3(-0.00999999978f,0.519999981f,0);
+            Coffee.transform.localScale = new Vector3(1.43865836f,1.08228838f,1);
         }
     }
 
     void OnTriggerExit2D(Collider2D other){
         if(other.tag == "Player") {
-            Stomp.transform.position = new Vector3(4,-1.44f,0.1224f);
+            Stomp.transform.position = new Vector3(-0.00999999978f,-0.170000002f,0);
+            Coffee.transform.localScale = new Vector3(1.43865836f,0.898508918f,1);
         }
     }
     void timer(){
