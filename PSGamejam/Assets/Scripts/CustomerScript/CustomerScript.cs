@@ -17,7 +17,7 @@ public class CustomerScript : MonoBehaviour {
 
     void Start() {
         customerSprites = Resources.LoadAll<Sprite>("NPC");
-        random = Random.Range(0, 4);
+        random = Random.Range(0, 5);
         gameObject.GetComponent<SpriteRenderer>().sprite = customerSprites[random];
     }
 
