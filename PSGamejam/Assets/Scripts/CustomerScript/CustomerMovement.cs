@@ -9,7 +9,7 @@ public class CustomerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.position = new Vector3(transform.position.x, transform.position.y + .4f,0);
     }
 
     // Update is called once per frame
@@ -34,8 +34,6 @@ public class CustomerMovement : MonoBehaviour
                 }
             }
         }
-
-
     }
 
     void OnTriggerEnter2D(Collider2D other){

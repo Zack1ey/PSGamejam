@@ -12,10 +12,13 @@ public class CustomerScript : MonoBehaviour {
     public GameObject Panel;
     public Button Button;
     private GameObject spawner;
-
+    private Sprite[] customerSprites;
+    private int random;
 
     void Start() {
-        
+        customerSprites = Resources.LoadAll<Sprite>("NPC");
+        random = Random.Range(0, 4);
+        gameObject.GetComponent<SpriteRenderer>().sprite = customerSprites[random];
     }
 
     void Update(){
@@ -29,7 +32,7 @@ public class CustomerScript : MonoBehaviour {
                 StartCoroutine(Typing());
                 if(index >= dialogue.Length -1){
                     Button.interactable = true;
-                
+                    
                 }
             }
         }
@@ -60,6 +63,8 @@ public class CustomerScript : MonoBehaviour {
         dialogueText.text = "";
         index = 0;
         Button.interactable = false;
+        Destroy(gameObject);
+        spawner.GetComponent<TableScript>().SetIsOpen(true);
         if(Panel != null){
         Panel.SetActive(false);
         }

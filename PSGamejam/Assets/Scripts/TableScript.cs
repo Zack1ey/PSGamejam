@@ -11,6 +11,7 @@ public class TableScript : MonoBehaviour
     private bool IsOpen;
     [SerializeField]private GameObject customer;
 
+
     // Start is called before the first frame update
     void Start()
     {
