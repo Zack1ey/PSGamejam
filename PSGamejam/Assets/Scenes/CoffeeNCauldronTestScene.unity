@@ -913,6 +913,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1973269435}
+    - target: {fileID: 9143110105792072375, guid: 6f498371c5a894e4aa4c40dd25fbcefe, type: 3}
+      propertyPath: GameOverPanel
+      value: 
+      objectReference: {fileID: 911791293}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
