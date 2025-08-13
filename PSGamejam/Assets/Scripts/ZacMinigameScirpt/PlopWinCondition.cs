@@ -28,10 +28,10 @@ public class PlopWinCondition : MonoBehaviour
         //Change Beaker colour off whats inside
         ChangePotionColours();
         //If there are 2 objects or more then continue
-        if(CheckResult()){
-            Scoring.scorePoints = Scoring.scorePoints + 5;
+        if (CheckResult())
+        {
+            Scoring.scorePoints += 5;
             SceneManager.UnloadSceneAsync("PlopMinigame");
-            MainScene.Scene.SetActive(true);
         }
         Debug.Log(overlappingObjects.Count);
     }

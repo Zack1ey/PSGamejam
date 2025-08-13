@@ -19,9 +19,10 @@ public class TableScript : MonoBehaviour
     }
 
     void Update(){
-        if(IsOpen){
+        if (IsOpen) {
             Instantiate(customer, transform.position, quaternion.identity, gameObject.transform);
-            IsOpen = false;
+            SetIsOpen(false);
+        
         }
     }
 
